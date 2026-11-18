@@ -2,17 +2,17 @@ package model.valutazione;
 
 public class Valutazione {
 
-    private int valore;
+    private Integer valore;
 
     public  Valutazione(int valore) {
         this.valore = valore;
     }
 
-    public int getValore() {
+    public Integer getValore() {
         return valore;
     }
 
-    public void setValore(int valore) {
+    public void setValore(Integer valore) {
         this.valore = valore;
     }
 
