@@ -2,18 +2,16 @@ package model.roster;
 
 public class Roster3vs3 extends AbstractRoster {
 
-    private final int CAPIENZA_MAX=6;
+    private static final int CAPIENZA_MAX=6;
 
     public Roster3vs3() {
-
+        super();
     }
 
     @Override
     public boolean isCompleto() {
-        if(CAPIENZA_MAX== giocatori.size()){
-            return true;
-        }
-        return false;
+
+        return (CAPIENZA_MAX== giocatori.size());
     }
 
 }

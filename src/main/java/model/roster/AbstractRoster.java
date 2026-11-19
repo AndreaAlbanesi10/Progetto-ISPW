@@ -1,5 +1,8 @@
 package model.roster;
 
+import exception.AppException;
+import exception.GiocatoreDuplicatoException;
+import exception.RosterPienoException;
 import model.utente.giocatore.Giocatore;
 
 import java.util.ArrayList;
@@ -19,8 +22,19 @@ public abstract class AbstractRoster {
 
     public abstract boolean isCompleto();
 
-    public  void aggiungiGiocatore(Giocatore g){
-        //da implementare anche con RosterCompletoExpetion
-    };
+    public  void aggiungiGiocatore (Giocatore g) throws RosterPienoException, GiocatoreDuplicatoException {
+
+        if(this.giocatori.contains(g)){
+
+            throw new GiocatoreDuplicatoException("giocatore già presente nel roster");
+        }
+
+        if(this.isCompleto()){
+            throw new RosterPienoException("roster pieno");
+        }
+
+        this.giocatori.add(g);
+
+    }
 
 }
